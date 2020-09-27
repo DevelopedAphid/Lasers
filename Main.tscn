@@ -15,3 +15,4 @@ position = Vector2( 86, -75 )
 script = ExtResource( 2 )
 
 [node name="Laser" parent="." instance=ExtResource( 4 )]
+position = Vector2( 40, 362 )
