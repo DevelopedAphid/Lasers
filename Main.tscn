@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Pointer.gd" type="Script" id=2]
+[ext_resource path="res://Pointer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Laser.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 169, 187 )
+
+[node name="Pointer" parent="Player" instance=ExtResource( 3 )]
+position = Vector2( 86, -75 )
+script = ExtResource( 2 )
+
+[node name="Laser" parent="." instance=ExtResource( 4 )]
