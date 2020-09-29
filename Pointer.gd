@@ -1,5 +1,7 @@
 extends Area2D
 
+signal mouseClicked(direction)
+
 var pointerRadius = 100
 var cursorPosition = Vector2(0,0)
 var playerPosition = Vector2(0,0)
@@ -26,3 +28,5 @@ func _process(_delta):
 	
 	global_position = pointerPosition
 	
+	if Input.is_action_pressed("ui_select"):
+		emit_signal("mouseClicked", pointerDirection)
