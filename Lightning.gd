@@ -11,6 +11,10 @@ func _ready():
 	$Line2D.add_point(Vector2(0,0))
 	$Line2D.points[0] = Vector2(300,0)
 	
+	is_casting = true
+	lightning_direction = get_parent().get_node("Player").get_node("Pointer").pointerDirection
+	$Line2D.points[0] = get_parent().get_node("Player").global_position
+	
 
 func _physics_process(_delta):
 	if is_casting:
@@ -36,10 +40,3 @@ func _physics_process(_delta):
 		for n in range(point_count,0,-1):
 			$Line2D.remove_point(n)
 		point_count = 0
-
-
-func _on_Pointer_mouseClicked(direction):
-	is_casting = true
-	lightning_direction = direction
-	$Line2D.points[0] = get_parent().get_node("Player").global_position
-	print($Line2D.points[0])
