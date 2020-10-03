@@ -48,8 +48,6 @@ func _ready():
 	
 
 func _physics_process(_delta):
-	
-	
 	if is_casting:
 		if point_count > 15:
 			is_casting = false
